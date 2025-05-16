@@ -1,0 +1,71 @@
+[
+  {
+    "ContainingType": "WeatherTrackerAPI.Controllers.WeatherController",
+    "Method": "GetWeather",
+    "RelativePath": "api/Weather/{city}",
+    "HttpMethod": "GET",
+    "IsController": true,
+    "Order": 0,
+    "Parameters": [
+      {
+        "Name": "city",
+        "Type": "System.String",
+        "IsRequired": true
+      }
+    ],
+    "ReturnTypes": []
+  },
+  {
+    "ContainingType": "WeatherTrackerAPI.Controllers.WeatherController",
+    "Method": "GetForecast",
+    "RelativePath": "api/Weather/forecast",
+    "HttpMethod": "GET",
+    "IsController": true,
+    "Order": 0,
+    "Parameters": [
+      {
+        "Name": "city",
+        "Type": "System.String",
+        "IsRequired": false
+      }
+    ],
+    "ReturnTypes": []
+  },
+  {
+    "ContainingType": "WeatherTrackerAPI.Controllers.WeatherController",
+    "Method": "GetWeatherHistory",
+    "RelativePath": "api/Weather/history",
+    "HttpMethod": "GET",
+    "IsController": true,
+    "Order": 0,
+    "Parameters": [
+      {
+        "Name": "skip",
+        "Type": "System.Int32",
+        "IsRequired": false
+      },
+      {
+        "Name": "take",
+        "Type": "System.Int32",
+        "IsRequired": false
+      }
+    ],
+    "ReturnTypes": []
+  },
+  {
+    "ContainingType": "WeatherTrackerAPI.Controllers.WeatherController",
+    "Method": "SearchWeatherHistory",
+    "RelativePath": "api/Weather/searchinhistory",
+    "HttpMethod": "GET",
+    "IsController": true,
+    "Order": 0,
+    "Parameters": [
+      {
+        "Name": "city",
+        "Type": "System.String",
+        "IsRequired": false
+      }
+    ],
+    "ReturnTypes": []
+  }
+]

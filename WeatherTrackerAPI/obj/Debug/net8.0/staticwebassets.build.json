@@ -1,0 +1,12 @@
+{
+  "Version": 1,
+  "Hash": "0H/YNgAl/cYiORCz2j5B79WEO/D5FZNhpW4/XcJZQyU=",
+  "Source": "WeatherTrackerAPI",
+  "BasePath": "_content/WeatherTrackerAPI",
+  "Mode": "Default",
+  "ManifestType": "Build",
+  "ReferencedProjectsConfiguration": [],
+  "DiscoveryPatterns": [],
+  "Assets": [],
+  "Endpoints": []
+}
