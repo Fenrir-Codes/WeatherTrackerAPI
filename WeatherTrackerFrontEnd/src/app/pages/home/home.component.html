@@ -1,0 +1,61 @@
+<div class="row justify-content-center">
+  <div *ngIf="!showWeatherCard" class="col-12 text-center">
+    <h1 class="text-primary">Weather Tracker</h1>
+  </div>
+</div>
+
+<div class="row justify-content-center mt-4">
+  <div class="col-12 col-md-8 col-lg-6 text-center">
+    <p *ngIf="!showWeatherCard">{{ textOnScreen }}</p>
+  </div>
+</div>
+
+<!-- Bootstrap card -->
+<div *ngIf="showWeatherCard" class="row justify-content-center mt-1">
+  <h3 class="text-center mb-3">{{ weatherData.city }}, {{ weatherData.country }}</h3>
+  <div class="col-12 col-md-6 col-lg-4">
+    <div class="card bg-light shadow-lg">
+      <div class="card-header bg-success text-white text-center fw-bold">
+        On: {{ weatherData.retrievedAt}}
+      </div>
+      <div *ngIf="weatherData.customIcon">
+        <img class="card-img-top" [src]="'/assets/images/' + weatherData.customIcon" alt="Weather Icon" width="128"
+          height="128" style="object-fit: contain;" />
+        <div class="text-center fs-3">
+          {{ weatherData.description }}
+        </div>
+      </div>
+      <div class="card-body">
+        <p class="card-text">Temperature: {{ weatherData.temperature }} °C</p>
+        <p class="card-text">Humidity: {{ weatherData.humidity }} %</p>
+        <p class="card-text">Wind Speed: {{ weatherData.windSpeed }} m/s</p>
+        <p class="card-text">Pressure: {{ weatherData.pressure }} hPa</p>
+      </div>
+    </div>
+  </div>
+</div>
+
+<!-- Forecast Section -->
+<div *ngIf="showForecastCards" class="row justify-content-center mt-4">
+  <h3 class="text-center mb-3 w-100">5-Day Forecast</h3>
+  <div class="col-12 col-md-6 col-lg-2" *ngFor="let forecastItem of forecastData">
+    <div class="card bg-light shadow-lg mb-3">
+      <div class="card-header bg-success text-white text-center fw-bold">
+        {{ forecastItem.dayOfWeek }}
+      </div>
+      <div *ngIf="forecastItem.weather[0].customIcon">
+        <img class="card-img-top" [src]="'/assets/images/' + forecastItem.weather[0].customIcon" alt="Weather Icon"
+          width="128" height="128" style="object-fit: contain;" />
+        <div class="text-center fs-3">
+          {{ forecastItem.weather[0].description }}
+        </div>
+      </div>
+      <div class="card-body">
+        <p class="card-text">Temperature: {{ forecastItem.main.temperature }} °C</p>
+        <p class="card-text">Humidity: {{ forecastItem.main.humidity }} %</p>
+        <p class="card-text">Wind Speed: {{ forecastItem.wind.speed }} m/s</p>
+        <p class="card-text">Pressure: {{ forecastItem.main.pressure }} hPa</p>
+      </div>
+    </div>
+  </div>
+</div>

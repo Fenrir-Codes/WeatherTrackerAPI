@@ -1,0 +1,41 @@
+<div class="container mt-4">
+  <h2 class="text-primary text-center mb-3">Weather History</h2>
+
+  <div class="row">
+    <div class="col-12">
+
+      <input type="text" class="form-control" placeholder="Search history..." (input)="onWeatherSearch($event)" />
+
+      <div class="row justify-content-center mt-4">
+        <div *ngFor="let weather of weatherHistory" class="col-12 col-md-6 col-lg-4 mb-3">
+          <div class="card bg-light shadow-lg">
+            <div class="card-header bg-success text-white d-flex justify-content-between fw-bold">
+              {{ weather.city }}, {{ weather.country }}
+              <div class="ms-auto">On: {{ weather.retrievedAt }} </div>
+            </div>
+
+            <div *ngIf="weather.customIcon">
+              <img class="card-img-top" [src]="'/assets/images/' + weather.customIcon" alt="Weather Icon" width="128"
+                height="128" style="object-fit: contain;" />
+              <div class="text-center fs-3">
+                {{ weather.description }}
+              </div>
+            </div>
+            <div class="card-body bg-light">
+              <p>Temperature: {{ weather.temperature }} °C</p>
+              <p>Humidity: {{ weather.humidity }} %</p>
+              <p>Wind Speed: {{ weather.windSpeed }} m/s</p>
+              <p>Pressure: {{ weather.pressure }} hPa</p>
+            </div>
+          </div>
+        </div>
+      </div>
+      
+      <div class="text-center mt-3">
+        <button class="btn btn-success mb-4" (click)="loadHistory()" [disabled]="loadMoreDisabled"> {{ loadMoreText }}
+        </button>
+      </div>
+        <app-alert-box #alertBox></app-alert-box>
+    </div>
+  </div>
+</div>

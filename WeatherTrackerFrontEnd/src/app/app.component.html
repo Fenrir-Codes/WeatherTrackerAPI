@@ -1,0 +1,39 @@
+<div class="container-fluid p-0">
+  <!-- Felső sáv (mindig látszik) -->
+  <div class="row bg-dark py-3">
+    <div class="col-12 d-flex flex-wrap align-items-center justify-content-between px-4 gap-2">
+      
+      <!-- Navigációs gombok (balra igazítva) -->
+      <div class="d-flex flex-grow-1 justify-content-center">
+        <button (click)="onHomeClicked()" routerLink="/" class="btn btn-primary me-2">Home</button>
+        <button routerLink="/history" class="btn btn-primary ms-2">History</button>
+      </div>
+
+      <!-- Kereső sáv és gombok (középre igazítva) -->
+      <div class="d-flex align-items-center justify-content-center flex-grow-1">
+        <input [(ngModel)]="searchCity" 
+               (ngModelChange)="onSearcFieldChange()" 
+               type="text" 
+               class="form-control me-2" 
+               placeholder="Search for city name" 
+               style="max-width: 300px; width: 100%;" />
+        <button [disabled]="isEmpty" 
+                (click)="onSearchClicked()" 
+                class="btn btn-light">Search</button>
+      </div>
+
+      <!-- Üres rész (jobb oldal) -->
+      <div class="d-flex flex-grow-1 justify-content-center">
+         <h3 class="text-primary">Weather Tracker</h3>
+      </div>
+
+    </div>
+  </div>
+
+
+  <!-- Oldalak megjelenítése itt -->
+  <div class="container-fluid mt-4 px-4">
+    <router-outlet></router-outlet>
+  </div>
+  <app-alert-box #alertBox></app-alert-box>
+</div>
