@@ -28,3 +28,6 @@ CMD : npm install
 
 3. Run the project with: 
 ng serve -o
+
+
+![Leírás a képről](./WT.png)
