@@ -30,4 +30,8 @@ CMD : npm install
 ng serve -o
 
 
-![Leírás a képről](./WT.png)
+![Screenshot 1 - ](./WT-1.png)
+
+![Screenshot 1 - ](./WT-2.png)
+
+![Screenshot 1 - ](./WH-1.png)
